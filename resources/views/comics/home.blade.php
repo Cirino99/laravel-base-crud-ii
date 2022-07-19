@@ -11,7 +11,7 @@
                 {{$comic->title}} -- {{$comic->price}} -- {{$comic->sale_date}} --
                 <a href="{{ route('comics.show', ['comic' => $comic]) }}">View</a> -- 
                 <a href="{{ route('comics.edit', ['comic' => $comic]) }}">Edit</a>
-                <form action="" method="post">
+                <form action="{{ route('comics.destroy', ['comic' => $comic]) }}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="submit">Delete</button>
