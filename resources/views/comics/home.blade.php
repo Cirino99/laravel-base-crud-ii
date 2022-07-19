@@ -4,7 +4,10 @@
 
 @section('mainContent')
 <main> 
-    <h1>Comics</h1>
+    <h1>Comics list</h1>
+    <h3>Add new Comic
+        <a href="{{ route('comics.create') }}" class="btn btn-info">Add</a>
+    </h3>
     <table class="table table-striped">
         <thead>
             <tr>
