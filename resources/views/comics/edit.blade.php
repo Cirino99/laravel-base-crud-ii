@@ -4,8 +4,8 @@
 
 @section('mainContent')
 <main> 
-    <h1>Sono il create</h1>
-    <form action="{{ route('comics.update') }}" method="post">
+    <h1>Sono l'edit</h1>
+    <form action="{{ route('comics.update' , ['comic' => $comic]) }}" method="post">
         @method('PUT')
         @csrf
         <div>
