@@ -4,20 +4,42 @@
 
 @section('mainContent')
 <main> 
-    <h1>Sono la home</h1>
-    <ul>
-        @foreach ($comics as $comic)
-            <li>
-                {{$comic->title}} -- {{$comic->price}} -- {{$comic->sale_date}} --
-                <a href="{{ route('comics.show', ['comic' => $comic]) }}">View</a> -- 
-                <a href="{{ route('comics.edit', ['comic' => $comic]) }}">Edit</a>
+    <h1>Comics</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Series</th>
+                <th>Sale date</th>
+                <th colspan="3">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($comics as $comic)
+            <tr>
+                <td>{{$comic->id}}</td>
+                <td>{{$comic->title}}</td>
+                <td>{{$comic->price}}</td>
+                <td>{{$comic->series}}</td>
+                <td>{{$comic->sale_date}}</td>
+                <td>
+                    <a href="{{ route('comics.show', ['comic' => $comic]) }}" class="btn btn-primary">View</a>
+                </td>
+                <td>
+                    <a href="{{ route('comics.edit', ['comic' => $comic]) }}" class="btn btn-warning">Edit</a>
+                </td>
+                <td>
                 <form action="{{ route('comics.destroy', ['comic' => $comic]) }}" method="post">
                     @csrf
                     @method('DELETE')
-                    <button type="submit">Delete</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
-            </li>
+                </td>
+            </tr>
         @endforeach
-    </ul>
+        </tbody>
+    </table>
 </main>
 @endsection

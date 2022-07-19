@@ -53,7 +53,7 @@ class ComicsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Comic $comic
      * @return \Illuminate\Http\Response
      */
     public function show(Comic $comic)
@@ -65,7 +65,7 @@ class ComicsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Comic $comic
      * @return \Illuminate\Http\Response
      */
     public function edit(Comic $comic)
@@ -77,7 +77,7 @@ class ComicsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Comic $comic
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Comic $comic)
@@ -91,7 +91,7 @@ class ComicsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Comic $comic
      * @return \Illuminate\Http\Response
      */
     public function destroy(Comic $comic)
