@@ -37,7 +37,7 @@
             <input type="text" name="type" id="type" value="{{$comic->type}}">
         </div>
 
-        <button>Save</button>
+        <button type="submit">Save</button>
     </form>
 </main>
 @endsection

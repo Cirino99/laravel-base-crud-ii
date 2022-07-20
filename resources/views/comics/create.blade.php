@@ -36,7 +36,7 @@
             <input type="text" name="type" id="type">
         </div>
 
-        <button>Save</button>
+        <button type="submit">Save</button>
     </form>
 </main>
 @endsection
